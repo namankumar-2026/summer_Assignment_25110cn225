@@ -1,0 +1,37 @@
+//A program to find largest and smallest element and comments in the code
+
+import java.util.Scanner;
+public class ArrayLargestSmallest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        
+        int[] array = new int[size];
+        
+        System.out.println("Enter " + size + " integers:");
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+        
+        // Initialize largest and smallest with the first element of the array
+        int largest = array[0];
+        int smallest = array[0];
+        
+        // Iterate through the array to find largest and smallest elements
+        for (int i = 1; i < size; i++) {
+            if (array[i] > largest) {
+                largest = array[i]; // Update largest if current element is greater
+            }
+            if (array[i] < smallest) {
+                smallest = array[i]; // Update smallest if current element is smaller
+            }
+        }
+        
+        System.out.println("The largest element in the array is: " + largest);
+        System.out.println("The smallest element in the array is: " + smallest);
+        
+        scanner.close();
+    }
+}
